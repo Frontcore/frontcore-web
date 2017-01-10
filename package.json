@@ -12,7 +12,7 @@
     "test:client": "jest",
     "test:coverage": "yarn run coverage:clean && jest --coverage",
     "lint": "eslint config src",
-		"lint:fix": "eslint --fix config src"
+    "lint:fix": "eslint --fix config src"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
@@ -28,6 +28,7 @@
     "highcharts": "^4.2.5",
     "history": "^2.0.1",
     "isomorphic-fetch": "^2.2.1",
+    "jsdoc": "^3.4.3",
     "keymirror": "^0.1.1",
     "react": "^15.3.2",
     "react-ace": "^3.2.0",
@@ -44,6 +45,7 @@
     "redux-immutable-state-invariant": "^1.2.3",
     "redux-thunk": "^2.1.0",
     "superagent": "^1.8.3",
+    "to-string-loader": "^1.1.5",
     "underscore": "^1.8.3",
     "validate.js": "^0.10.0"
   },
@@ -81,10 +83,13 @@
     "sinon": "^1.17.5",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^2.3.1"
   },
   "jest": {
-    "scriptPreprocessor": "./config/jest.preprocessor.conf",
+    "scriptPreprocessor": "./config/test/jest.preprocessor.config",
     "moduleFileExtensions": [
       "js",
       "json",
