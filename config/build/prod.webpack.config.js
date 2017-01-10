@@ -5,7 +5,9 @@
  */
 const webpackMerge = require('webpack-merge');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
+const BannerPlugin = require('webpack/lib/BannerPlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /**
  * Import form local/current directory
@@ -38,13 +40,30 @@ module.exports = function(options) {
 			sourceMapFilename: '[file].map'
 		},
 
+		/**
+		 * Module will get concatenated with Webpack common config module
+		 */
+		module: {},
+
+		/**
+		 * Plugins will get concatenated with Webpack common config plugins
+		 */
 		plugins: [
+			/**
+			 * Generates a solid base html page for your web application with
+			 * all your webpack generated css and js files built in.
+			 */
+			new HtmlWebpackPlugin({
+				template: './src/index.html',
+				minify: true
+			}),
+
 			/**
 			 * Reference environment variables through process.env
 			 */
 			new DefinePlugin({
 				'process.env': {
-					NODE_END: JSON.stringify('production')
+					NODE_ENV: JSON.stringify(settings.prod.env)
 				}
 			}),
 
@@ -52,7 +71,12 @@ module.exports = function(options) {
 			 * Minimize all JavaScript output of chunks.
 			 * Loaders are switched into minimizing mode.
 			 */
-			new UglifyJsPlugin()
+			new UglifyJsPlugin(),
+
+			/**
+			 * Adds a banner to the top of each generated chunk.
+			 */
+			new BannerPlugin(settings.prod.banner)
 		]
 
 	});

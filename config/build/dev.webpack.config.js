@@ -37,9 +37,24 @@ module.exports = function(options) {
 			sourceMapFilename: '[file].map'
 		},
 
-		devServer: {
+		/**
+		 * Module will get concatenated with Webpack common config module
+		 */
+		module: {},
 
-		}
+		/**
+		 * Plugins will get concatenated with Webpack common config plugins
+		 */
+		plugins: [
+			/**
+			 * Reference environment variables through process.env
+			 */
+			new DefinePlugin({
+				'process.env': {
+					NODE_ENV: JSON.stringify(settings.dev.env)
+				}
+			})
+		]
 
 	});
 };
