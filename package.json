@@ -6,9 +6,9 @@
   "scripts": {
     "dist:clean": "rimraf dist",
     "coverage:clean": "rimrag coverage",
-    "bundle:watch": "yarn run dist:clean && webpack --progress -d --watch",
-    "bundle:dev": "yarn run dist:clean && webpack --progress -p -d",
-		"build": "yarn run lint && yarn run dist:clean && yarn run coverage:clean && yarn run test:all && webpack --progress -p",
+    "bundle:watch": "yarn run dist:clean && webpack --config \"./config/build/dev.webpack.config.js\" --progress -d --watch",
+    "bundle:dev": "yarn run dist:clean && webpack --config \"./config/build/dev.webpack.config.js\" --progress -p -d",
+		"build": "yarn run lint && yarn run dist:clean && yarn run coverage:clean && yarn run test:all && webpack --config \"./config/build/prod.webpack.config.js\" --progress -p",
     "test:all": "yarn run coverage:clean && jest && jest --coverage",
     "test:client": "jest",
     "test:coverage": "yarn run coverage:clean && jest --coverage",
