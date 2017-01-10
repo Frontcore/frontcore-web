@@ -74,16 +74,12 @@ module.exports = function(options) {
 
 		plugins: [
 			/**
-			 *
+			 * Generates a solid base html page for your web application with
+			 * all your webpack generated css and js files built in.
 			 */
 			new HtmlWebpackPlugin({
 				template: './src/index.html'
-			}),
-
-			/**
-			 *
-			 */
-
+			})
 		]
 	}
 

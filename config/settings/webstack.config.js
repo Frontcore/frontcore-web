@@ -6,6 +6,16 @@
 const processEnv = process.env;
 
 /**
+ * Import form local/current directory
+ */
+const product = require('../../package.json');
+const banner = `
+	${product.name} v${product.version}
+	Developed & maintained by ${product.author} and contributors.
+	MIT Licensed.
+`;
+
+/**
  * Export constants configuration
  */
 module.exports = {
@@ -13,9 +23,9 @@ module.exports = {
 	 * Constants for webpack-dev-server to development environment
 	 */
 	"dev": {
-		"ENV": processEnv.NODE_ENV || "development",
-		"HOST": processEnv.HOST || "localhost",
-		"PORT": processEnv.PORT || 3000
+		"env": processEnv.NODE_ENV || "development",
+		"host": processEnv.HOST || "localhost",
+		"port": processEnv.PORT || 3000
 	},
 
 	/**
@@ -23,9 +33,10 @@ module.exports = {
 	 * to check locally.
 	 */
 	"prod": {
-		"ENV": processEnv.NODE_ENV || "production",
-		"HOST": processEnv.HOST || "localhost",
-		"PORT": processEnv.PORT || 3500
+		"env": processEnv.NODE_ENV || "production",
+		"host": processEnv.HOST || "localhost",
+		"port": processEnv.PORT || 3500,
+		"banner": banner
 	},
 
 	/**
