@@ -3,6 +3,7 @@
 /**
  * Import from node_modules
  */
+const path = require('path');
 const processEnv = process.env;
 
 /**
@@ -55,7 +56,7 @@ module.exports = {
 		/**
 		 * Distribution version for dev and prod will get generated on project root directory level
 		 */
-		"output": "dist"
+		"output": path.join(__dirname, "../../", "dist")
 	},
 
 	/**
