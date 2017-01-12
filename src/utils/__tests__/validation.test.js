@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
-import Validation from '../validation';
+import Validation from '../validation.utils';
 
 describe('Validation utility module', () => {
 
