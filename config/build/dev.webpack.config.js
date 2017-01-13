@@ -54,7 +54,12 @@ const devWebpackConfig = {
 				NODE_ENV: JSON.stringify(settings.dev.env)
 			}
 		})
-	]
+	],
+
+	devServer: {
+		port: settings.dev.port,
+		host: settings.dev.host
+	}
 };
 
 module.exports = webpackMerge(commonWebpackConfig, devWebpackConfig);
