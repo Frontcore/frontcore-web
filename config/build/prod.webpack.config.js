@@ -18,66 +18,66 @@ const settings = require('../settings/webstack.config');
 /**
  * Export Webpack production configuration.
  */
-module.exports = function(options) {
-	return webpackMerge(commonWebpackConfig(), {
+
+const prodWebpackConfig = {
+	/**
+	 * Options affecting the output of the Webpack bundling.
+	 */
+	output: {
 		/**
-		 * Options affecting the output of the Webpack bundling.
+		 * Required. The output directory as absolute path.
 		 */
-		output: {
-			/**
-			 * Required. The output directory as absolute path.
-			 */
-			path: settings.build.output,
-
-			/**
-			 * Specifies the name of each output file.
-			 */
-			filename: '[name].min.js',
-
-			/**
-			 * Specify the filename of the source-map file for JavaScript files.
-			 */
-			sourceMapFilename: '[file].map'
-		},
+		path: settings.build.output,
 
 		/**
-		 * Module will get concatenated with Webpack common config module
+		 * Specifies the name of each output file.
 		 */
-		module: {},
+		filename: 'frontcore.min.js',
 
 		/**
-		 * Plugins will get concatenated with Webpack common config plugins
+		 * Specify the filename of the source-map file for JavaScript files.
 		 */
-		plugins: [
-			/**
-			 * Generates a solid base html page for your web application with
-			 * all your webpack generated css and js files built in.
-			 */
-			new HtmlWebpackPlugin({
-				template: './src/index.html',
-				minify: true
-			}),
+		sourceMapFilename: 'frontcore.map'
+	},
 
-			/**
-			 * Reference environment variables through process.env
-			 */
-			new DefinePlugin({
-				'process.env': {
-					NODE_ENV: JSON.stringify(settings.prod.env)
-				}
-			}),
+	/**
+	 * Module will get concatenated with Webpack common config module
+	 */
+	module: {},
 
-			/**
-			 * Minimize all JavaScript output of chunks.
-			 * Loaders are switched into minimizing mode.
-			 */
-			new UglifyJsPlugin(),
+	/**
+	 * Plugins will get concatenated with Webpack common config plugins
+	 */
+	plugins: [
+		/**
+		 * Generates a solid base html page for your web application with
+		 * all your webpack generated css and js files built in.
+		 */
+		new HtmlWebpackPlugin({
+			template: './src/index.html'
+		}),
 
-			/**
-			 * Adds a banner to the top of each generated chunk.
-			 */
-			new BannerPlugin(settings.prod.banner)
-		]
+		/**
+		 * Reference environment variables through process.env
+		 */
+		new DefinePlugin({
+			'process.env': {
+				NODE_ENV: JSON.stringify(settings.prod.env)
+			}
+		}),
 
-	});
+		/**
+		 * Minimize all JavaScript output of chunks.
+		 * Loaders are switched into minimizing mode.
+		 */
+		new UglifyJsPlugin(),
+
+		/**
+		 * Adds a banner to the top of each generated chunk.
+		 */
+		new BannerPlugin(settings.prod.banner)
+	]
+
 };
+
+module.exports = webpackMerge(commonWebpackConfig, prodWebpackConfig);

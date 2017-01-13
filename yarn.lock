@@ -937,7 +937,7 @@ babel-register@^6.18.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@^5.8.29, babel-runtime@^5.8.38:
+babel-runtime@^5.8.29:
   version "5.8.38"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-5.8.38.tgz#1c0b02eb63312f5f087ff20450827b425c9d4c19"
   dependencies:
@@ -3572,7 +3572,7 @@ jsx-ast-utils@^1.0.0:
     acorn-jsx "^3.0.1"
     object-assign "^4.1.0"
 
-keycode@^2.1.1:
+keycode@^2.1.2:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.1.8.tgz#94d2b7098215eff0e8f9a8931d5a59076c4532fb"
 
@@ -3646,10 +3646,6 @@ loader-utils@0.2.x, loader-utils@^0.2.11, loader-utils@^0.2.16, loader-utils@^0.
     emojis-list "^2.0.0"
     json5 "^0.5.0"
     object-assign "^4.0.1"
-
-lodash-compat@^3.10.2:
-  version "3.10.2"
-  resolved "https://registry.yarnpkg.com/lodash-compat/-/lodash-compat-3.10.2.tgz#c6940128a9d30f8e902cd2cf99fd0cba4ecfc183"
 
 lodash-es@^4.2.1:
   version "4.17.4"
@@ -4851,20 +4847,19 @@ react-addons-test-utils@^15.0.1:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-bootstrap@^0.29.5:
-  version "0.29.5"
-  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-0.29.5.tgz#0c6f7a7d06834b0db85a18ccddc04b129c5f2058"
+react-bootstrap@^0.30.7:
+  version "0.30.7"
+  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-0.30.7.tgz#39da80088693ecb71e8e63b5bdc313571fd993d1"
   dependencies:
-    babel-runtime "^5.8.38"
-    classnames "^2.2.3"
+    babel-runtime "^6.11.6"
+    classnames "^2.2.5"
     dom-helpers "^2.4.0"
     invariant "^2.2.1"
-    keycode "^2.1.1"
-    lodash-compat "^3.10.2"
-    react-overlays "^0.6.3"
-    react-prop-types "^0.3.0"
-    uncontrollable "^3.2.3"
-    warning "^2.1.0"
+    keycode "^2.1.2"
+    react-overlays "^0.6.10"
+    react-prop-types "^0.4.0"
+    uncontrollable "^4.0.1"
+    warning "^3.0.0"
 
 react-cookie@^0.4.8:
   version "0.4.9"
@@ -4886,7 +4881,7 @@ react-dropzone@^3.5.1:
   dependencies:
     attr-accept "^1.0.3"
 
-react-overlays@^0.6.3:
+react-overlays@^0.6.10:
   version "0.6.10"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-0.6.10.tgz#e7e52dad47f00a0fc784eb044428c3a9e874bfa3"
   dependencies:
@@ -4894,12 +4889,6 @@ react-overlays@^0.6.3:
     dom-helpers "^2.4.0"
     react-prop-types "^0.4.0"
     warning "^3.0.0"
-
-react-prop-types@^0.3.0:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/react-prop-types/-/react-prop-types-0.3.2.tgz#e2763ac6f3a80199d8981c3647c44b0554c97b7f"
-  dependencies:
-    warning "^2.0.0"
 
 react-prop-types@^0.4.0:
   version "0.4.0"
@@ -5796,13 +5785,7 @@ uid-number@~0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
 
-uncontrollable@^3.2.3:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/uncontrollable/-/uncontrollable-3.3.1.tgz#e23b402e7a4c69b1853fb4b43ce34b6480c65b6f"
-  dependencies:
-    invariant "^2.1.0"
-
-uncontrollable@^4.0.0:
+uncontrollable@^4.0.0, uncontrollable@^4.0.1:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/uncontrollable/-/uncontrollable-4.0.3.tgz#06ec76cb9e02914756085d9cea0354fc746b09b4"
   dependencies:
@@ -5989,7 +5972,7 @@ walker@~1.0.5:
   dependencies:
     makeerror "1.0.x"
 
-warning@^2.0.0, warning@^2.1.0:
+warning@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/warning/-/warning-2.1.0.tgz#21220d9c63afc77a8c92111e011af705ce0c6901"
   dependencies:
@@ -6051,13 +6034,13 @@ webpack-dev-server@^1.16.2:
     supports-color "^3.1.1"
     webpack-dev-middleware "^1.4.0"
 
-webpack-merge@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-2.3.1.tgz#152ff773c5fbc6e398015fdf75835de343c33777"
+webpack-merge@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-2.4.0.tgz#4c518d471632c29ae22e83687c2f42a9cd5f35ea"
   dependencies:
     lodash "^4.17.4"
 
-webpack@^1.13.2:
+webpack@^1.14.0:
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-1.14.0.tgz#54f1ffb92051a328a5b2057d6ae33c289462c823"
   dependencies:
