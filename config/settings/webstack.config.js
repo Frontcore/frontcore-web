@@ -56,7 +56,7 @@ module.exports = {
 		/**
 		 * Distribution version for dev and prod will get generated on project root directory level
 		 */
-		"output": path.join(__dirname, "../../", "dist")
+		"output": "./dist"
 	},
 
 	/**
