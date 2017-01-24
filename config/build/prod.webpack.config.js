@@ -76,8 +76,12 @@ const prodWebpackConfig = {
 		 * Adds a banner to the top of each generated chunk.
 		 */
 		new BannerPlugin(settings.prod.banner)
-	]
+	],
 
+	devServer: {
+		port: settings.prod.port,
+		host: settings.prod.host
+	}
 };
 
 module.exports = webpackMerge(commonWebpackConfig, prodWebpackConfig);
