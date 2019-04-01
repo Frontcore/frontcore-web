@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
-    "bootstrap": "^3.4.0",
+    "bootstrap": "^3.4.1",
     "brace": "^0.8.0",
     "classnames": "^2.2.3",
     "es6-promise": "^3.2.1",
