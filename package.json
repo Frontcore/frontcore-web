@@ -19,7 +19,7 @@
     "lint:fix": "eslint --fix config src"
   },
   "dependencies": {
-    "bcrypt": "^0.8.7",
+    "bcrypt": "^5.0.0",
     "bootstrap": "^3.4.1",
     "brace": "^0.8.0",
     "classnames": "^2.2.3",
