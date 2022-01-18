@@ -30,7 +30,7 @@
     "fuse.js": "^2.5.0",
     "highcharts": "^4.2.5",
     "history": "^2.0.1",
-    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-fetch": "^3.0.0",
     "keymirror": "^0.1.1",
     "react": "^15.4.2",
     "react-ace": "^3.2.0",
